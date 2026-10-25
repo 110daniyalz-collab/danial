@@ -1,0 +1,634 @@
+/* ===== RESET & VARIABLES (BMW Theme) ===== */
+:root {
+  --bmw-blue: #0066b1;
+  --bmw-blue-dark: #004a82;
+  --bmw-blue-light: #1e88e5;
+  --bmw-navy: #0d1b2a;
+  --bmw-white: #ffffff;
+  --bmw-bg: #f5f8fc;
+  --bmw-gray: #5a6b7b;
+  --bmw-border: #e1e8f0;
+  --shadow-sm: 0 2px 12px rgba(0, 102, 177, 0.08);
+  --shadow-md: 0 8px 30px rgba(0, 102, 177, 0.12);
+  --shadow-lg: 0 20px 60px rgba(0, 102, 177, 0.18);
+  --radius: 16px;
+  --radius-lg: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  background: var(--bmw-white);
+  color: var(--bmw-navy);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--bmw-blue) 0%, var(--bmw-blue-light) 100%);
+  color: var(--bmw-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--bmw-blue);
+  border-color: var(--bmw-blue);
+}
+
+.btn-outline:hover {
+  background: var(--bmw-blue);
+  color: var(--bmw-white);
+  transform: translateY(-3px);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--bmw-border);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--bmw-navy);
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bmw-blue), var(--bmw-blue-light));
+  color: var(--bmw-white);
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: var(--bmw-gray);
+  font-weight: 500;
+  transition: color 0.25s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--bmw-blue);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--bmw-blue);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  padding: 90px 0 100px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(0, 102, 177, 0.10), transparent 45%),
+    radial-gradient(circle at 15% 90%, rgba(30, 136, 229, 0.08), transparent 45%),
+    var(--bmw-bg);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--bmw-white);
+  border: 1px solid var(--bmw-border);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bmw-blue);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  line-height: 1.35;
+  font-weight: 900;
+  margin-bottom: 22px;
+  color: var(--bmw-navy);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--bmw-blue), var(--bmw-blue-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--bmw-gray);
+  margin-bottom: 34px;
+  max-width: 540px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--bmw-border);
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stats strong {
+  font-size: 1.7rem;
+  color: var(--bmw-blue);
+  font-weight: 900;
+}
+
+.hero-stats span {
+  font-size: 0.9rem;
+  color: var(--bmw-gray);
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+}
+
+.avatar-ring {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bmw-blue), var(--bmw-blue-light));
+  padding: 8px;
+  box-shadow: var(--shadow-lg);
+  animation: float 4s ease-in-out infinite;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bmw-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+}
+
+.floating-card {
+  position: absolute;
+  background: var(--bmw-white);
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--bmw-border);
+  animation: float 5s ease-in-out infinite;
+}
+
+.card-1 {
+  top: 20px;
+  right: 0;
+  animation-delay: 0.5s;
+}
+
+.card-2 {
+  bottom: 20px;
+  left: 0;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* ===== SECTION COMMON ===== */
+.section {
+  padding: 100px 0;
+}
+
+.section-gray {
+  background: var(--bmw-bg);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(0, 102, 177, 0.08);
+  color: var(--bmw-blue);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-head h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: var(--bmw-navy);
+}
+
+.section-head p {
+  color: var(--bmw-gray);
+  font-size: 1.05rem;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-box {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--bmw-blue), var(--bmw-blue-light));
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.about-box::after {
+  content: '🧑‍💻';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9rem;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 16px 0 20px;
+  color: var(--bmw-navy);
+}
+
+.about-text p {
+  color: var(--bmw-gray);
+  margin-bottom: 16px;
+  font-size: 1.02rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-top: 28px;
+}
+
+.skills li {
+  padding: 8px 18px;
+  background: var(--bmw-white);
+  border: 1px solid var(--bmw-border);
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--bmw-blue);
+  transition: all 0.25s;
+}
+
+.skills li:hover {
+  background: var(--bmw-blue);
+  color: var(--bmw-white);
+  border-color: var(--bmw-blue);
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--bmw-white);
+  padding: 38px 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--bmw-border);
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--bmw-blue);
+}
+
+.card-icon {
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--bmw-navy);
+}
+
+.card p {
+  color: var(--bmw-gray);
+  font-size: 0.97rem;
+}
+
+/* Course Card */
+.card-course {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.course-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 102, 177, 0.1);
+  color: var(--bmw-blue);
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.course-link {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--bmw-blue);
+  font-weight: 700;
+  transition: gap 0.3s;
+}
+
+.course-link:hover {
+  color: var(--bmw-blue-light);
+}
+
+/* ===== CTA ===== */
+.cta {
+  text-align: center;
+  padding: 80px 40px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--bmw-blue) 0%, var(--bmw-blue-light) 100%);
+  color: var(--bmw-white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 34px;
+  position: relative;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cta .btn-primary {
+  background: var(--bmw-white);
+  color: var(--bmw-blue);
+}
+
+.cta .btn-primary:hover {
+  background: var(--bmw-navy);
+  color: var(--bmw-white);
+}
+
+.cta .btn-outline {
+  color: var(--bmw-white);
+  border-color: var(--bmw-white);
+}
+
+.cta .btn-outline:hover {
+  background: var(--bmw-white);
+  color: var(--bmw-blue);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--bmw-navy);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 40px 0;
+  margin-top: 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer .brand-text {
+  color: var(--bmw-white);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-visual {
+    min-height: 320px;
+  }
+
+  .avatar-ring {
+    width: 260px;
+    height: 260px;
+  }
+
+  .avatar {
+    font-size: 6rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-stats {
+    gap: 28px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .section-head h2,
+  .about-text h2,
+  .cta h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta {
+    padding: 60px 24px;
+  }
+}
